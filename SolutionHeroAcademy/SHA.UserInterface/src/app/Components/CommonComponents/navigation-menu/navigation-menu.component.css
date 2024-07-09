@@ -1,0 +1,27 @@
+.offcanvas-header {
+    height: 61px;
+    border-bottom: 1px solid var(--bs-secondary);
+}
+
+.toggle_button {
+    color: rgb(255 255 255 / 70%);
+}
+
+.toggle_button:active:focus {
+    color: var(--text-color-white);
+}
+
+.btn-close:focus {
+    outline: 0;
+    box-shadow: none;
+    opacity: var(--bs-btn-close-focus-opacity);
+}
+
+.offcanvas-title {
+    cursor: pointer;
+}
+
+.navigation-phrases {
+    position: fixed;
+    bottom: 0;
+}

@@ -1,0 +1,50 @@
+<nav class="navbar navbar-dark bg-dark px-3">
+    <div class="container-xxl">
+        <a routerLink="/home" routerLinkActive="active" class="navbar-brand fs-5 py-1 m-0" (click)="animateTitle()"
+            [ngClass]="{'animate__animated animate__rubberBand': titleAnimated}">Hero Academy</a>
+
+        <button type="button" class="btn btn-link navbar-toggle toggle_button fs-5 py-1 m-0" data-bs-toggle="offcanvas"
+            data-bs-target="#SideBar" aria-controls="SideBar" aria-label="Toggle navigation">
+            <i class="bi bi-menu-button-wide"></i>
+        </button>
+
+        <div id="SideBar" class="offcanvas offcanvas-end text-bg-dark">
+            <div class="offcanvas-header">
+                <p class="offcanvas-title fs-5" (click)="animateNavigationTitle()"
+                    [ngClass]="{'animate__animated animate__rubberBand': titleNavigationAnimated}">Navigation</p>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item dropdown"
+                        *ngFor="let group of groupedSettings | keyvalue; let indexGroup = index">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            <i class="{{group.value.icon}}"></i> {{group.key}}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li *ngFor="let setting of group.value.items">
+                                @if (setting.active) {
+                                <a routerLink="{{setting.path}}" class="dropdown-item"
+                                    data-bs-dismiss="offcanvas">{{setting.name}}</a>
+                                }
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <div class="">
+                    <button routerLink="game" type="button" class="btn btn-sm w-100 btn-light mb-3"
+                        data-bs-dismiss="offcanvas">Play Game</button>
+
+                    <p class="fw-medium text-secondary p-1">
+                        ~ "{{navigationPhrases[0]}}".
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
