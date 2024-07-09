@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+    --text-color-main: #0D090C;
+    --text-color-white: #fff;
+    
+    --color-main: #22403A;
+    --color-secondary: #577356;
+    --color-complementary: #7B8C79;
+}
+
+* {
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-family: "Baloo Paaji 2", sans-serif;
+}
+
+.bg-color-main {
+    background-color: var(--color-main);
+}
+
+.bg-color-secondary {
+    background-color: var(--color-secondary);
+}
+
+.bg-color-complementary {
+    background-color: var(--color-complementary);
+}
+
+
+/* Color Theme Swatches in Hex */
+.Rio-Verde-1-hex { color: #22403A; }
+.Rio-Verde-2-hex { color: #577356; }
+.Rio-Verde-3-hex { color: #7B8C79; }
+.Rio-Verde-4-hex { color: #8B8C5D; }
+.Rio-Verde-5-hex { color: #BFB28A; }
