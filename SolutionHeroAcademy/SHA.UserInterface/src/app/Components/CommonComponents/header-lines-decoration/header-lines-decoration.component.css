@@ -1,0 +1,11 @@
+.header-lines-decoration {
+    width: 100%;
+    top: 0;
+    height: 4px;
+}
+
+.header-lines-decoration-divisor {
+    float: left;
+    height: 100%;
+    width: 33.333%;
+}
