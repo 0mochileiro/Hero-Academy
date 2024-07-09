@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">
+            <i class="bi bi-question-circle-fill"></i> Questions
+        </h5>
+    </div>
+
+    <div class="card-body">
+
+        <div class="p-1">
+            <p id="{{model?.id}}" class="mb-1">{{model?.question}}</p>
+
+            <ul class="list-group mb-1">
+                <li class="list-group-item d-flex align-items-center" *ngFor="let answer of model?.answers ">
+                    <input id="{{answer.id}}" name="questions" type="radio" class="form-check-input me-1"
+                        [(ngModel)]="selectedAnswerId" [value]="answer.id">
+                    <label for="{{answer.id}}" class="form-check-label stretched-link">{{answer.answer}}</label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="p-1">
+            <button type="button" class="btn btn-sm btn-dark w-100" [disabled]="!selectedAnswerId" (click)="sendAnswer()">
+                <i class="bi bi-send-fill"></i> Enviar resposta
+            </button>
+        </div>
+
+    </div>
+
+    <div class="card-footer text-center text-body-secondary">
+        {{model?.category}}
+    </div>
+</div>
