@@ -1,0 +1,10 @@
+.img-card-resposive {
+    max-height: 250px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-history-responsive{
+    max-height: 250px;
+    overflow-x: auto;
+}
