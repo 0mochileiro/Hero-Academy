@@ -1,0 +1,35 @@
+.loader {
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot {
+    border-radius: 100%;
+    border: 5px solid #333;
+    margin: 5px;
+}
+
+.dot:nth-child(1) {
+    animation: preloader .6s ease-in-out alternate infinite;
+    border-color: var(--color-secondary);
+
+}
+
+.dot:nth-child(2) {
+    animation: preloader .6s ease-in-out alternate .2s infinite;
+    border-color: var(--color-main);
+}
+
+.dot:nth-child(3) {
+    animation: preloader .6s ease-in-out alternate .4s infinite;
+}
+
+@keyframes preloader {
+    100% {
+        transform: scale(1.5);
+    }
+}
