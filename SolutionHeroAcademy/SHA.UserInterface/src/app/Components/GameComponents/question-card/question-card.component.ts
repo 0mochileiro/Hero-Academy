@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 
 import { QuestionManagerService } from '../../../Services/question-manager-service';
-import { Question, ResponseGetRandomQuestion } from '../../../Models/QuestionManagerServiceModel';
-import { timeInterval } from 'rxjs';
+import { Question } from '../../../Models/QuestionManagerServiceModel';
 
 @Component({
   selector: 'app-question-card',
