@@ -8,7 +8,8 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5020",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SHA_STORAGE_PATH": "C:\\Repository\\RepositoryDeveloper\\Github\\HeroAcademy\\SolutionHeroAcademy\\SHA.Storage\\"
       }
     }
   }
