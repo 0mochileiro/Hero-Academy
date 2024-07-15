@@ -3,13 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHA.ApplicationService", "SHA.ApplicationService\SHA.ApplicationService.csproj", "{3DFD146B-4A4C-4A4C-9F6B-EAB887B04100}"
 EndProject
-
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHA.Common", "SHA.Common\SHA.Common.csproj", "{14113F71-22AB-4F09-A74E-080C0920F400}"
 EndProject
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHA.DevelopmentConsole", "SHA.DevelopmentConsoles\SHA.DevelopmentConsole.csproj", "{1BF3211E-6D65-4BEC-AF42-AFFCF2E30EA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +30,9 @@ Global
 		{14113F71-22AB-4F09-A74E-080C0920F400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14113F71-22AB-4F09-A74E-080C0920F400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14113F71-22AB-4F09-A74E-080C0920F400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF3211E-6D65-4BEC-AF42-AFFCF2E30EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF3211E-6D65-4BEC-AF42-AFFCF2E30EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF3211E-6D65-4BEC-AF42-AFFCF2E30EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF3211E-6D65-4BEC-AF42-AFFCF2E30EA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
