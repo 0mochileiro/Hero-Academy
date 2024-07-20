@@ -8,45 +8,57 @@ namespace SHA.ApplicationService.Controllers
     public class QuestionManagerController : ControllerBase
     {
         [HttpGet(Name = "GetQuestionListAsync")]
-        public async Task<ActionResult<List<Question>>> GetQuestionListAsync()
+        public IActionResult GetQuestionListAsync()
         {
-            var questions = await GetStoredQuestionListAsync();
-
-            return Ok(new
+            try
             {
-                Ok = true,
-                Message = "Successfully retrieved the list of questions.",
-                Result = questions
-            });
+                var questions = GetStoredQuestionList();
+
+                Thread.Sleep(3000); //TODO: Used to simulate delayed response time for requests from the interface. Remove when going to production.
+
+                return Ok(new
+                {
+                    Ok = true,
+                    Message = "Successfully retrieved the list of questions.",
+                    Result = questions
+                });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An error occurred while processing your request."); //TODO: Implement application-level logging.
+            }
         }
 
         [HttpGet(Name = "GetRandomQuestionAsync")]
-        public async Task<ActionResult> GetRandomQuestionAsync()
+        public IActionResult GetRandomQuestionAsync()
         {
-            var questions = await GetStoredQuestionListAsync();
-
-            var random = new Random();
-            var randomIndex = random.Next(0, questions.Count);
-
-            var randomQuestion = questions[randomIndex];
-
-            return Ok(new
+            try
             {
-                Ok = true,
-                Message = "Question retrieved successfully.",
-                Result = randomQuestion
-            });
+                var questions = GetStoredQuestionList();
+
+                var random = new Random();
+                var randomIndex = random.Next(0, questions.Count);
+
+                var randomQuestion = questions[randomIndex];
+
+                Thread.Sleep(3000); //TODO: Used to simulate delayed response time for requests from the interface. Remove when going to production.
+
+                return Ok(new
+                {
+                    Ok = true,
+                    Message = "Question retrieved successfully.",
+                    Result = randomQuestion
+                });
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An error occurred while processing your request."); //TODO: Implement application-level logging.
+            }
         }
 
-        public ActionResult GetTest()
+        public List<Question> GetStoredQuestionList()
         {
-            return new JsonResult(new {Name = "Joao Mantovani"});
-        }
-
-        public async Task<List<Question>> GetStoredQuestionListAsync()
-        {
-            await Task.Yield(); //TODO: Review.
-
             var questions = new List<Question>
             {
                 new Question
@@ -249,13 +261,11 @@ namespace SHA.ApplicationService.Controllers
                 },
             };
 
-            return await OrganizingQuestionList(questions);
+            return OrganizingQuestionList(questions);
         }
 
-        public async Task<List<Question>> OrganizingQuestionList(List<Question> questions)
+        public List<Question> OrganizingQuestionList(List<Question> questions)
         {
-            await Task.Yield(); //TODO: Review.
-
             foreach (var question in questions)
             {
                 var questionID = question.ID;
@@ -268,6 +278,5 @@ namespace SHA.ApplicationService.Controllers
 
             return questions.OrderBy(q => q.QuestionCategory).ToList();
         }
-
     }
 }
