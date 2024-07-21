@@ -14,29 +14,27 @@ import { Question } from '../../../Models/QuestionManagerServiceModel';
 })
 
 export class QuestionCardComponent implements OnInit {
-  model: Question | undefined;
-  selectedAnswerId: string = '';
-
   constructor(private service: QuestionManagerService) {
   }
+
+  model: Question | undefined;
+  selectedAnswerId: string = '';
 
   ngOnInit(): void {
     this.getQuestion();
   }
 
   getQuestion(): void {
-    // this.service.getRandomQuestion().subscribe((response) => (this.model = response.result)); //Correct
-
-    setTimeout(() => {
-      this.service.getRandomQuestion().subscribe((response) => (this.model = response.result)); // Simulate server response time
-    }, 5000);
+    this.service.getRandomQuestion().subscribe((response) => (this.model = response.result));
   }
 
   checkAnswer(): void {
     let selectedAnswer = this.model?.answers?.find(a => a.id === this.selectedAnswerId);
 
     this.displayAlert(selectedAnswer?.correct);
+
     this.resetComponentState();
+    
     this.getQuestion();
   }
 
