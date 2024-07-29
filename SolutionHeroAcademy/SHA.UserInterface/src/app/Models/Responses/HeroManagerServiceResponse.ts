@@ -1,5 +1,4 @@
 export interface ResponseGetRandomHero {
-
     ok: boolean;
     message: string;
     result: Hero;

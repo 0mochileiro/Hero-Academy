@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { HeroCardComponent } from '../hero-card/hero-card.component';
-import { QuestionCardComponent } from '../question-card/question-card.component';
+
+import { HeroCardComponent } from '@Components/GameComponents/hero-card/hero-card.component';
+import { QuestionCardComponent } from '@Components/GameComponents/question-card/question-card.component';
 
 @Component({
   selector: 'app-game',
@@ -9,6 +10,7 @@ import { QuestionCardComponent } from '../question-card/question-card.component'
   templateUrl: './game.component.html',
   styleUrl: './game.component.css'
 })
+
 export class GameComponent {
 
 }

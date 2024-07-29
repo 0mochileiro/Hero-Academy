@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common'
 
-import { HeroManagerService } from '../../../Services/hero-manager.service';
-import { Hero, ResponseGetRandomHero } from '../../../Models/Responses/HeroManagerServiceResponse';
-import { LoadComponent } from '../../CommonComponents/load/load.component';
+import { LoadComponent } from '@Components/CommonComponents/load/load.component';
+import { HeroManagerService } from '@Services/hero-manager.service';
+import { Hero } from '@Models/Responses/HeroManagerServiceResponse';
 
 @Component({
   selector: 'app-hero-card',

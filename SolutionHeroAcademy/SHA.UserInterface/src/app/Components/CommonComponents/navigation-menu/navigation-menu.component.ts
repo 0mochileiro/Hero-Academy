@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { NavigationMenuModel } from '../../../Models/NavigationMenuModel';
+import { NavigationMenuModel } from '@Models/NavigationMenuModel';
 
 @Component({
   selector: 'app-navigation-menu',
@@ -38,18 +38,6 @@ export class NavigationMenuComponent implements OnInit {
 
     setTimeout(() => {
       this.titleAnimated = false;
-    }, 1000);
-  }
-
-  animateNavigationTitle(): void {
-    if (this.titleNavigationAnimated) {
-      return;
-    }
-
-    this.titleNavigationAnimated = true;
-
-    setTimeout(() => {
-      this.titleNavigationAnimated = false;
     }, 1000);
   }
 }

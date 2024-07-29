@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 
-import { QuestionManagerService } from '../../../Services/question-manager-service';
-import { Question } from '../../../Models/QuestionManagerServiceModel';
-import { LoadComponent } from "../../CommonComponents/load/load.component";
+import { QuestionManagerService } from '@Services/question-manager-service';
+import { Question } from '@Models/Responses/QuestionManagerServiceResponse';
+import { LoadComponent } from "@Components/CommonComponents/load/load.component";
 
 @Component({
   selector: 'app-question-card',
@@ -26,7 +26,9 @@ export class QuestionCardComponent implements OnInit {
   }
 
   getQuestion(): void {
-    this.service.getRandomQuestion().subscribe((response) => (this.model = response.result));
+    this.service.getRandomQuestion().subscribe((response) => 
+      (this.model = response.result)
+    );
   }
 
   checkAnswer(): void {

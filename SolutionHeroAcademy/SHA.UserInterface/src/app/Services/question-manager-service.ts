@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { environment } from '../../environments/environment';
-import { ResponseGetRandomQuestion } from '../Models/QuestionManagerServiceModel';
+import { environment } from '@Environments/environment';
+import { ResponseGetRandomQuestion } from '@Models/Responses/QuestionManagerServiceResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class QuestionManagerService {
-  private readonly uri = environment.SERVICE_URI;
-
   constructor(private httpClient: HttpClient) {
   }
+
+  private readonly uri = environment.SERVICE_URI;
 
   public getRandomQuestion(): Observable<ResponseGetRandomQuestion> {
     let headers = new HttpHeaders({
