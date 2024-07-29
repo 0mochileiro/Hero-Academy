@@ -8,3 +8,10 @@
     max-height: 250px;
     overflow-x: auto;
 }
+
+.card-body-without-model{
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
