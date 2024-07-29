@@ -7,10 +7,10 @@
 
     <div class="card-body">
         @if (model) {
-            <div class="animate__animated animate__fadeIn p-1 mb-3">
-                <p id="{{model.id}}" class="mb-1">{{model.statement}}</p>
+            <div class="p-1 animate__animated animate__fadeIn">
+                <p id="{{model.id}}" class="mb-3">{{model.statement}}</p>
 
-                <ul class="list-group">
+                <ul class="list-group mb-3">
                     <li class="list-group-item d-flex align-items-center" *ngFor="let answer of model.answers ">
                         <input id="{{answer.id}}" name="questions" type="radio" class="form-check-input me-3"
                             [(ngModel)]="selectedAnswerId" [value]="answer.id">
@@ -21,10 +21,8 @@
             </div>
         }
         @else {
-            <div class="loader animate__animated animate__fadeIn">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+            <div class="unanswered-card-body">
+                <app-load></app-load>
             </div>
         }
     </div>

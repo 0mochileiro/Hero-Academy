@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms'
 
 import { QuestionManagerService } from '../../../Services/question-manager-service';
 import { Question } from '../../../Models/QuestionManagerServiceModel';
+import { LoadComponent } from "../../CommonComponents/load/load.component";
 
 @Component({
   selector: 'app-question-card',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, LoadComponent],
   templateUrl: './question-card.component.html',
   styleUrl: './question-card.component.css'
 })
